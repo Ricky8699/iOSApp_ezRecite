@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		BE9148981EA9EB7A00A889D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */; };
-		BE91489A1EA9EB7A00A889D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148991EA9EB7A00A889D6 /* ViewController.swift */; };
 		BE91489D1EA9EB7A00A889D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE91489B1EA9EB7A00A889D6 /* Main.storyboard */; };
 		BE91489F1EA9EB7A00A889D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */; };
 		BE9148A21EA9EB7A00A889D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9148A01EA9EB7A00A889D6 /* LaunchScreen.storyboard */; };
+		BE9148AA1EA9EBA200A889D6 /* VocaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */; };
+		BE9148AC1EA9ED8F00A889D6 /* VocaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE9148941EA9EB7A00A889D6 /* MxoVocabulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MxoVocabulary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE9148991EA9EB7A00A889D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE91489C1EA9EB7A00A889D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE9148A11EA9EB7A00A889D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE9148A31EA9EB7A00A889D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewController.swift; sourceTree = "<group>"; };
+		BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */,
-				BE9148991EA9EB7A00A889D6 /* ViewController.swift */,
 				BE91489B1EA9EB7A00A889D6 /* Main.storyboard */,
 				BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */,
 				BE9148A01EA9EB7A00A889D6 /* LaunchScreen.storyboard */,
 				BE9148A31EA9EB7A00A889D6 /* Info.plist */,
+				BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */,
+				BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */,
 			);
 			path = MxoVocabulary;
 			sourceTree = "<group>";
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE91489A1EA9EB7A00A889D6 /* ViewController.swift in Sources */,
+				BE9148AA1EA9EBA200A889D6 /* VocaTableViewController.swift in Sources */,
 				BE9148981EA9EB7A00A889D6 /* AppDelegate.swift in Sources */,
+				BE9148AC1EA9ED8F00A889D6 /* VocaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
