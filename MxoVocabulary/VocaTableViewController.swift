@@ -216,10 +216,13 @@ class VocaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellID = "VocaCell"
         let tvcells = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! VocaTableViewCell
+        tvcells.accessoryType = .disclosureIndicator
         tvcells.cName.text = VocaArr[indexPath.row]["cName"]!
         tvcells.eName.text = VocaArr[indexPath.row]["eName"]!
         tvcells.Phonetic.text = "[" + VocaArr[indexPath.row]["Phonetic"]! + "]"
         tvcells.Img.image = UIImage(named: VocaArr[indexPath.row]["eName"]! + ".jpg")
+        tvcells.Img.layer.cornerRadius = 15
+        tvcells.Img.clipsToBounds = true
         return tvcells
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
