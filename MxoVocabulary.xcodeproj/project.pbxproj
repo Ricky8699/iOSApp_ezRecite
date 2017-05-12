@@ -22,7 +22,7 @@
 		BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE9148A11EA9EB7A00A889D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE9148A31EA9EB7A00A889D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewController.swift; sourceTree = "<group>"; };
+		BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -306,6 +306,7 @@
 				BE9148A81EA9EB7A00A889D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
