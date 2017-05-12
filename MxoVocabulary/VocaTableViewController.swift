@@ -182,6 +182,7 @@ class VocaTableViewController: UITableViewController {
             speechSynthesizer.speak(speechUtterance)
         }
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -239,9 +240,36 @@ class VocaTableViewController: UITableViewController {
         optionMenu.popoverPresentationController?.sourceView = self.view
         optionMenu.popoverPresentationController?.sourceRect = (tableView.cellForRow(at: indexPath)?.frame)!
         self.present(optionMenu, animated: true,completion: nil)
-        
     }
 
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "分享", handler: { (action, indexPath) -> Void in
+            let defaultText = "與您分享一個英文單字...\r\n【" + self.VocaArr[indexPath.row]["cName"]!  + "】" + self.VocaArr[indexPath.row]["eName"]!
+            if let imageToShare = UIImage(named: self.VocaArr[indexPath.row]["eName"]! + ".jpg") {
+                let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+                activityController.popoverPresentationController?.sourceView = self.view
+                activityController.popoverPresentationController?.sourceRect = (tableView.cellForRow(at: indexPath)?.frame)!
+                self.present(activityController,animated: true, completion: nil)
+            }
+        })
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "刪除", handler: { (action, indexPath) -> Void in
+            
+            self.VocaArr.remove(at: indexPath.row)
+            //tableView.reloadData()
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        })
+        
+        let speakAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "發音", handler: { (action, indexPath) -> Void in
+            self.speak(speakText: self.VocaArr[indexPath.row]["cName"]! + "," + self.VocaArr[indexPath.row]["eName"]!  , lang: "zh-TW")
+        })
+
+        speakAction.backgroundColor = UIColor(red: 91.0/255.0, green: 192.0/255.0, blue: 222.0/255.0, alpha: 1.0)
+        shareAction.backgroundColor = UIColor(red: 92.0/255.0, green: 184.0/255.0, blue: 92.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 217.0/255.0, green: 83.0/255.0, blue: 79.0/255.0, alpha: 1.0)
+        
+        return [deleteAction, shareAction, speakAction]
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -250,17 +278,19 @@ class VocaTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
+    /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            VocaArr.remove(at: indexPath.row)
+            //tableView.reloadData()
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+       }    
     }
-    */
+ */
+    
 
     /*
     // Override to support rearranging the table view.
