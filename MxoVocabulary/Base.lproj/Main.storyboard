@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E163f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Kuq-I5-cPB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F71b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="brX-X7-hDd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Voca Table View Controller-->
+        <!--Vocabulary List-->
         <scene sceneID="wJI-DF-lec">
             <objects>
                 <tableViewController id="Kuq-I5-cPB" customClass="VocaTableViewController" customModule="MxoVocabulary" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,6 +70,7 @@
                                     <outlet property="Phonetic" destination="XWh-T7-5Q0" id="bF8-dQ-QE4"/>
                                     <outlet property="cName" destination="BOS-wR-Fgf" id="PRS-ma-47u"/>
                                     <outlet property="eName" destination="okf-I9-0Pk" id="Ylc-ZQ-NoO"/>
+                                    <segue destination="gCa-zs-IdX" kind="show" identifier="showVocaDetail" id="6kv-R9-16Z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,10 +79,144 @@
                             <outlet property="delegate" destination="Kuq-I5-cPB" id="hOu-0J-KXf"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Vocabulary List" id="YM7-Pc-rYZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwm-xW-gHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+            <point key="canvasLocation" x="499" y="36"/>
+        </scene>
+        <!--Voca Detail View Controller-->
+        <scene sceneID="hUY-MJ-TCu">
+            <objects>
+                <viewController id="gCa-zs-IdX" customClass="VocaDetailViewController" customModule="MxoVocabulary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gfI-fL-A6a"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q6g-Ea-Fxe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UPM-Eq-ZtI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ev3-Pk-1dm">
+                                <rect key="frame" x="26" y="94" width="323" height="206"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MI9-LB-1g0">
+                                <rect key="frame" x="26" y="330" width="323" height="93.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英文名稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dl-I5-ydu">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音標" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="568-RP-k41">
+                                        <rect key="frame" x="0.0" y="39" width="323" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中文名稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIT-b7-7iy">
+                                        <rect key="frame" x="0.0" y="69.5" width="323" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgt-op-9ec">
+                                <rect key="frame" x="26" y="454" width="323" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="par-e7-Ehy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="－ 發音 Speak －">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="speakBtn:" destination="gCa-zs-IdX" eventType="touchUpInside" id="Q7p-sK-LEJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amM-cM-JTd">
+                                <rect key="frame" x="26" y="504" width="323" height="40"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.72156862745098038" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QJl-H7-as7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xqS-xb-ult"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="－ 分享 Share －">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareBtn:" destination="gCa-zs-IdX" eventType="touchUpInside" id="2IL-of-UPr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您背單字的好幫手！😊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-Yu-hty">
+                                <rect key="frame" x="26" y="574" width="323" height="17"/>
+                                <fontDescription key="fontDescription" name=".PingFangTC-Regular" family=".PingFang TC" pointSize="17"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99346186209695941" blue="0.87222481529533469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ev3-Pk-1dm" firstAttribute="leading" secondItem="UPM-Eq-ZtI" secondAttribute="leadingMargin" constant="10" id="04T-4r-e54"/>
+                            <constraint firstItem="amM-cM-JTd" firstAttribute="leading" secondItem="UPM-Eq-ZtI" secondAttribute="leadingMargin" constant="10" id="BQ2-jr-xVz"/>
+                            <constraint firstItem="Q6g-Ea-Fxe" firstAttribute="top" secondItem="ev3-Pk-1dm" secondAttribute="bottom" constant="367" id="HVB-kR-lSy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dgt-op-9ec" secondAttribute="trailing" constant="10" id="ICv-Sn-4f7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sqU-Yu-hty" secondAttribute="trailing" constant="10" id="SqC-mp-swK"/>
+                            <constraint firstItem="Dgt-op-9ec" firstAttribute="top" secondItem="MI9-LB-1g0" secondAttribute="bottom" constant="30" id="Wzi-6n-Un5"/>
+                            <constraint firstItem="MI9-LB-1g0" firstAttribute="leading" secondItem="UPM-Eq-ZtI" secondAttribute="leadingMargin" constant="10" id="XgD-3f-8ya"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MI9-LB-1g0" secondAttribute="trailing" constant="10" id="bPN-fR-DhY"/>
+                            <constraint firstItem="MI9-LB-1g0" firstAttribute="top" secondItem="ev3-Pk-1dm" secondAttribute="bottom" constant="30" id="bnL-g0-XjM"/>
+                            <constraint firstItem="Dgt-op-9ec" firstAttribute="leading" secondItem="UPM-Eq-ZtI" secondAttribute="leadingMargin" constant="10" id="chA-rP-01F"/>
+                            <constraint firstItem="amM-cM-JTd" firstAttribute="top" secondItem="Dgt-op-9ec" secondAttribute="bottom" constant="10" id="d2D-yE-p0j"/>
+                            <constraint firstItem="sqU-Yu-hty" firstAttribute="leading" secondItem="UPM-Eq-ZtI" secondAttribute="leadingMargin" constant="10" id="hOL-WO-hAT"/>
+                            <constraint firstItem="ev3-Pk-1dm" firstAttribute="top" secondItem="gfI-fL-A6a" secondAttribute="bottom" constant="30" id="iVa-0n-VAZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ev3-Pk-1dm" secondAttribute="trailing" constant="10" id="q9V-HC-k6I"/>
+                            <constraint firstItem="sqU-Yu-hty" firstAttribute="top" secondItem="amM-cM-JTd" secondAttribute="bottom" constant="30" id="sNS-J5-g92"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="amM-cM-JTd" secondAttribute="trailing" constant="10" id="uX5-dr-IJ6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Phonetic" destination="568-RP-k41" id="Tc9-4t-Idg"/>
+                        <outlet property="cName" destination="jIT-b7-7iy" id="1ky-UN-OvE"/>
+                        <outlet property="eName" destination="9dl-I5-ydu" id="Q0N-kS-XMF"/>
+                        <outlet property="vocaImageView" destination="ev3-Pk-1dm" id="0jw-lU-lhh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzo-n9-4t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O7e-5Z-nHi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="brX-X7-hDd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xD1-2R-mxy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kuq-I5-cPB" kind="relationship" relationship="rootViewController" id="2zh-Do-ztS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTw-JF-l5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="36"/>
         </scene>
     </scenes>
 </document>

@@ -13,6 +13,7 @@
 		BE9148A21EA9EB7A00A889D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9148A01EA9EB7A00A889D6 /* LaunchScreen.storyboard */; };
 		BE9148AA1EA9EBA200A889D6 /* VocaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */; };
 		BE9148AC1EA9ED8F00A889D6 /* VocaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */; };
+		BEAEDFF51ECEC52200A64CC2 /* VocaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAEDFF41ECEC52200A64CC2 /* VocaDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BE9148A31EA9EB7A00A889D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewCell.swift; sourceTree = "<group>"; };
+		BEAEDFF41ECEC52200A64CC2 /* VocaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BE9148A31EA9EB7A00A889D6 /* Info.plist */,
 				BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */,
 				BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */,
+				BEAEDFF41ECEC52200A64CC2 /* VocaDetailViewController.swift */,
 			);
 			path = MxoVocabulary;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEAEDFF51ECEC52200A64CC2 /* VocaDetailViewController.swift in Sources */,
 				BE9148AA1EA9EBA200A889D6 /* VocaTableViewController.swift in Sources */,
 				BE9148981EA9EB7A00A889D6 /* AppDelegate.swift in Sources */,
 				BE9148AC1EA9ED8F00A889D6 /* VocaTableViewCell.swift in Sources */,

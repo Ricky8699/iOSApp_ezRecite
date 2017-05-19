@@ -226,6 +226,7 @@ class VocaTableViewController: UITableViewController {
         tvcells.Img.clipsToBounds = true
         return tvcells
     }
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let speakActionHandler = { (action:UIAlertAction!) -> Void in
@@ -241,7 +242,7 @@ class VocaTableViewController: UITableViewController {
         optionMenu.popoverPresentationController?.sourceRect = (tableView.cellForRow(at: indexPath)?.frame)!
         self.present(optionMenu, animated: true,completion: nil)
     }
-
+    */
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "分享", handler: { (action, indexPath) -> Void in
             let defaultText = "與您分享一個英文單字...\r\n【" + self.VocaArr[indexPath.row]["cName"]!  + "】" + self.VocaArr[indexPath.row]["eName"]!
@@ -307,14 +308,21 @@ class VocaTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showVocaDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let nextController = segue.destination as! VocaDetailViewController
+                nextController.vocaImage = VocaArr[indexPath.row]["eName"]! + ".jpg"
+                nextController.cNameX = VocaArr[indexPath.row]["cName"]!
+                nextController.eNameX = VocaArr[indexPath.row]["eName"]!
+                nextController.PhoneticX = "[" + VocaArr[indexPath.row]["Phonetic"]! + "]"
+            }
+        }
     }
-    */
+    
 
 }
