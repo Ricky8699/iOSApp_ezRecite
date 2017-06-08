@@ -8,10 +8,101 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 class VocaTableViewController: UITableViewController {
 
     
+    
+    var mycontext : NSManagedObjectContext!
+    
+    func getContext()->NSManagedObjectContext{
+        let appDelegate=UIApplication.shared.delegate as!AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    var VocaList : [VocaModel] = []
+    
+    func addVoca(eName: String , cName: String , phonetic: String , img: String){
+        let context = getContext()
+        var Voca : VocaModel!
+        Voca = VocaModel(context: getContext())
+        Voca.eName = eName
+        Voca.cName = cName
+        Voca.phonetic = phonetic
+        if let vocaImg = UIImage(named: img){
+            if let imgData = UIImageJPEGRepresentation(vocaImg, 1.0){
+                Voca.img = NSData(data: imgData)
+            }
+        }
+        do {
+            try context.save()
+            print(Voca.eName! + " add OK!")
+        } catch {
+            print(error)
+        }
+    }
+    
+    func getVoca(){
+        let request : NSFetchRequest<VocaModel> = VocaModel.fetchRequest()
+        let context = getContext()
+        do {
+            VocaList = try context.fetch(request)
+            /*for Voca in VocaList{
+                print(Voca.eName! + " is loading...")
+            }*/
+            print("Total: " + String(VocaList.count))
+        }catch{
+            print(error)
+        }
+    }
+    func delVoca(){
+        let request : NSFetchRequest<VocaModel> = VocaModel.fetchRequest()
+        let context = getContext()
+        do {
+            VocaList = try context.fetch(request)
+            for Voca in VocaList{
+                context.delete(Voca)
+            }
+            try context.save()
+        }catch{
+            print(error)
+        }
+    }
+    var InitVoca : [Voca] = [
+        Voca(eName: "jam", cName: "果醬", phonetic: "dʒæm", img: "jam.jpg") ,
+        Voca(eName: "joke", cName: "笑話", phonetic: "dʒok", img: "joke.jpg") ,
+        Voca(eName: "jacket", cName: "夾克", phonetic: "ˋdʒækIt", img: "jacket.jpg") ,
+        Voca(eName: "judge", cName: "法官", phonetic: "dʒʌdʒ", img: "judge.jpg") ,
+        Voca(eName: "jail", cName: "噴射機", phonetic: "dʒel", img: "jail.jpg") ,
+        Voca(eName: "jet", cName: "珠寶", phonetic: "dʒZt",img: "jet.jpg") ,
+        Voca(eName: "jewelry", cName: "日誌", phonetic: "ˋdʒuәlrI", img: "jewelry.jpg") ,
+        Voca(eName: "journal", cName: "監獄", phonetic: "ˋdʒFnL", img: "journal.jpg") ,
+        Voca(eName: "journey", cName: "旅行", phonetic: "ˋdʒFnI", img: "journey.jpg") ,
+        Voca(eName: "jungle", cName: "叢林", phonetic: "ˋdʒʌŋgL", img: "jungle.jpg") ,
+        Voca(eName: "junk", cName: "垃圾", phonetic: "dʒʌŋk", img: "junk.jpg") ,
+        Voca(eName: "justice", cName: "公平", phonetic: "ˋdʒʌstIs", img: "justice.jpg") ,
+        Voca(eName: "job", cName: "工作", phonetic: "dʒɑb", img: "job.jpg") ,
+        Voca(eName: "jump", cName: "跳", phonetic: "dʒʌmp", img: "jump.jpg") ,
+        Voca(eName: "jelly", cName: "果凍", phonetic: "ˋdʒɛlɪ", img: "jelly.jpg") ,
+        Voca(eName: "juice", cName: "果汁", phonetic: "dʒus", img: "juice.jpg") ,
+        Voca(eName: "jeans", cName: "牛仔褲", phonetic: "dʒinz", img: "jeans.jpg") ,
+        Voca(eName: "jog", cName: "慢跑", phonetic: "dʒɑg", img: "jog.jpg") ,
+        Voca(eName: "joy", cName: "歡樂", phonetic: "dʒɔɪ", img: "joy.jpg") ,
+        Voca(eName: "jug", cName: "水壺", phonetic: "dʒʌg", img: "jug.jpg") ,
+        Voca(eName: "jury", cName: "陪審團", phonetic: "ˈdʒʊrɪ", img: "jury.jpg") ,
+        Voca(eName: "jazz", cName: "爵士樂", phonetic: "dʒæz", img: "jazz.jpg") ,
+        Voca(eName: "jacana", cName: "水雉", phonetic: "͵ʒɑsəˋnɑ", img: "jacana.jpg") ,
+        Voca(eName: "jackboot", cName: "長筒靴", phonetic: "ˋdʒæk͵but", img: "jackboot.jpg") ,
+        Voca(eName: "jackal", cName: "豺狼", phonetic: "ˋdʒækɔl", img: "jackal.jpg") ,
+        Voca(eName: "jackfruit", cName: "菠蘿蜜", phonetic: "ˋdʒæk͵frut", img: "jackfruit.jpg") ,
+        Voca(eName: "jackshaft", cName: "起重機", phonetic: "ˋdʒæk͵ʃæft", img: "jackshaft.jpg") ,
+        Voca(eName: "jacal", cName: "小茅屋", phonetic: "hɑˋkɑl", img: "jacal.jpg") ,
+        Voca(eName: "jackknife", cName: "摺疊刀", phonetic: "ˋdʒæk͵naɪf", img: "jackknife.jpg") ,
+        Voca(eName: "jamb", cName: "門邊框柱", phonetic: "dʒæm", img: "jamb.jpg")
+    ]
+ 
+    /*
     var VocaArr : [[String : String]] = [
         
         [
@@ -165,6 +256,7 @@ class VocaTableViewController: UITableViewController {
             "Phonetic" : "dʒæm"
         ]
     ]
+    */
     let speechSynthesizer = AVSpeechSynthesizer()
     
     override var prefersStatusBarHidden: Bool{
@@ -186,8 +278,16 @@ class VocaTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getVoca()
+        if VocaList.count != 0 {
+            delVoca()
+        }
+        for item  in InitVoca {
+            addVoca(eName: item.eName, cName: item.cName, phonetic: item.phonetic, img: item.img)
+        }
+        getVoca()
         
-        speak(speakText: "Welcome to my Application",lang: "en-IE");
+        //speak(speakText: "Welcome to my Application",lang: "en-IE");
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -210,7 +310,7 @@ class VocaTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return VocaArr.count
+        return VocaList.count
     }
 
     
@@ -218,10 +318,11 @@ class VocaTableViewController: UITableViewController {
         let cellID = "VocaCell"
         let tvcells = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! VocaTableViewCell
         tvcells.accessoryType = .disclosureIndicator
-        tvcells.cName.text = VocaArr[indexPath.row]["cName"]!
-        tvcells.eName.text = VocaArr[indexPath.row]["eName"]!
-        tvcells.Phonetic.text = "[" + VocaArr[indexPath.row]["Phonetic"]! + "]"
-        tvcells.Img.image = UIImage(named: VocaArr[indexPath.row]["eName"]! + ".jpg")
+        tvcells.cName.text = VocaList[indexPath.row].cName
+        tvcells.eName.text = VocaList[indexPath.row].eName
+        tvcells.Phonetic.text = "[" + VocaList[indexPath.row].phonetic! + "]"
+        tvcells.Img.image = UIImage(data: VocaList[indexPath.row].img! as Data)
+        //tvcells.Img.image = UIImage(named: VocaList[indexPath.row].eName! + ".jpg")
         tvcells.Img.layer.cornerRadius = 15
         tvcells.Img.clipsToBounds = true
         return tvcells
@@ -245,8 +346,8 @@ class VocaTableViewController: UITableViewController {
     */
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "分享", handler: { (action, indexPath) -> Void in
-            let defaultText = "與您分享一個英文單字...\r\n【" + self.VocaArr[indexPath.row]["cName"]!  + "】" + self.VocaArr[indexPath.row]["eName"]!
-            if let imageToShare = UIImage(named: self.VocaArr[indexPath.row]["eName"]! + ".jpg") {
+            let defaultText = "與您分享一個英文單字...\r\n【" + self.VocaList[indexPath.row].cName!  + "】" + self.VocaList[indexPath.row].eName!
+            if let imageToShare = UIImage(data: self.VocaList[indexPath.row].img! as Data) {
                 let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
                 activityController.popoverPresentationController?.sourceView = self.view
                 activityController.popoverPresentationController?.sourceRect = (tableView.cellForRow(at: indexPath)?.frame)!
@@ -256,13 +357,13 @@ class VocaTableViewController: UITableViewController {
         
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "刪除", handler: { (action, indexPath) -> Void in
             
-            self.VocaArr.remove(at: indexPath.row)
+            self.VocaList.remove(at: indexPath.row)
             //tableView.reloadData()
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         })
         
         let speakAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "發音", handler: { (action, indexPath) -> Void in
-            self.speak(speakText: self.VocaArr[indexPath.row]["cName"]! + "," + self.VocaArr[indexPath.row]["eName"]!  , lang: "zh-TW")
+            self.speak(speakText: self.VocaList[indexPath.row].cName! + "," + self.VocaList[indexPath.row].eName!  , lang: "zh-TW")
         })
 
         speakAction.backgroundColor = UIColor(red: 91.0/255.0, green: 192.0/255.0, blue: 222.0/255.0, alpha: 1.0)
@@ -316,10 +417,7 @@ class VocaTableViewController: UITableViewController {
         if segue.identifier == "showVocaDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let nextController = segue.destination as! VocaDetailViewController
-                nextController.vocaImage = VocaArr[indexPath.row]["eName"]! + ".jpg"
-                nextController.cNameX = VocaArr[indexPath.row]["cName"]!
-                nextController.eNameX = VocaArr[indexPath.row]["eName"]!
-                nextController.PhoneticX = "[" + VocaArr[indexPath.row]["Phonetic"]! + "]"
+                nextController.Voca = VocaList[indexPath.row]
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE5C1A091EE14485003BC946 /* VocaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE5C1A071EE14485003BC946 /* VocaModel.xcdatamodeld */; };
 		BE9148981EA9EB7A00A889D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */; };
 		BE91489D1EA9EB7A00A889D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE91489B1EA9EB7A00A889D6 /* Main.storyboard */; };
 		BE91489F1EA9EB7A00A889D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */; };
@@ -14,9 +15,11 @@
 		BE9148AA1EA9EBA200A889D6 /* VocaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */; };
 		BE9148AC1EA9ED8F00A889D6 /* VocaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */; };
 		BEAEDFF51ECEC52200A64CC2 /* VocaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAEDFF41ECEC52200A64CC2 /* VocaDetailViewController.swift */; };
+		BEC5453D1ED8085A007E0EE7 /* VocaClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5453C1ED8085A007E0EE7 /* VocaClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE5C1A081EE14485003BC946 /* VocaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VocaModel.xcdatamodel; sourceTree = "<group>"; };
 		BE9148941EA9EB7A00A889D6 /* MxoVocabulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MxoVocabulary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE91489C1EA9EB7A00A889D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaTableViewCell.swift; sourceTree = "<group>"; };
 		BEAEDFF41ECEC52200A64CC2 /* VocaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaDetailViewController.swift; sourceTree = "<group>"; };
+		BEC5453C1ED8085A007E0EE7 /* VocaClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocaClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		BE9148961EA9EB7A00A889D6 /* MxoVocabulary */ = {
 			isa = PBXGroup;
 			children = (
+				BEC5453C1ED8085A007E0EE7 /* VocaClass.swift */,
 				BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */,
 				BE91489B1EA9EB7A00A889D6 /* Main.storyboard */,
 				BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */,
@@ -66,6 +71,7 @@
 				BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */,
 				BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */,
 				BEAEDFF41ECEC52200A64CC2 /* VocaDetailViewController.swift */,
+				BE5C1A071EE14485003BC946 /* VocaModel.xcdatamodeld */,
 			);
 			path = MxoVocabulary;
 			sourceTree = "<group>";
@@ -145,7 +151,9 @@
 			files = (
 				BEAEDFF51ECEC52200A64CC2 /* VocaDetailViewController.swift in Sources */,
 				BE9148AA1EA9EBA200A889D6 /* VocaTableViewController.swift in Sources */,
+				BE5C1A091EE14485003BC946 /* VocaModel.xcdatamodeld in Sources */,
 				BE9148981EA9EB7A00A889D6 /* AppDelegate.swift in Sources */,
+				BEC5453D1ED8085A007E0EE7 /* VocaClass.swift in Sources */,
 				BE9148AC1EA9ED8F00A889D6 /* VocaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +321,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE5C1A071EE14485003BC946 /* VocaModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE5C1A081EE14485003BC946 /* VocaModel.xcdatamodel */,
+			);
+			currentVersion = BE5C1A081EE14485003BC946 /* VocaModel.xcdatamodel */;
+			path = VocaModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BE91488C1EA9EB7A00A889D6 /* Project object */;
 }

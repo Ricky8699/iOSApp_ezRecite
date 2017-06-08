@@ -14,10 +14,8 @@ class VocaDetailViewController: UIViewController {
     @IBOutlet var eName: UILabel!
     @IBOutlet var cName: UILabel!
     @IBOutlet var Phonetic: UILabel!
-    var vocaImage = ""
-    var eNameX = ""
-    var cNameX = ""
-    var PhoneticX = ""
+    
+    var Voca : VocaModel!
     
     let speechSynthesizer = AVSpeechSynthesizer()
     
@@ -39,14 +37,14 @@ class VocaDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vocaImageView.image = UIImage(named: vocaImage)
+        vocaImageView.image = UIImage(data: Voca.img! as Data)
         vocaImageView.layer.cornerRadius = 30
         vocaImageView.layer.borderWidth = 2
         vocaImageView.layer.borderColor = UIColor.orange.cgColor
         vocaImageView.clipsToBounds = true
-        eName.text = eNameX
-        cName.text = cNameX
-        Phonetic.text = PhoneticX
+        eName.text = Voca.eName
+        cName.text = Voca.cName
+        Phonetic.text = Voca.phonetic
         
         // Do any additional setup after loading the view.
     }
@@ -58,8 +56,8 @@ class VocaDetailViewController: UIViewController {
     
     @IBAction func shareBtn(_ sender: UIButton) {
 
-            let texts = "與您分享一個英文單字...\r\n【" + self.cNameX  + "】" + self.eNameX
-            if let images = UIImage(named: self.eNameX + ".jpg") {
+            let texts = "與您分享一個英文單字...\r\n【" + self.Voca.cName! + "】" + self.Voca.eName!
+            if let images = UIImage(data: Voca.img! as Data) {
                 let acController = UIActivityViewController(activityItems: [texts, images], applicationActivities: nil)
                 acController.popoverPresentationController?.sourceView = self.view
                 acController.popoverPresentationController?.sourceRect = sender.frame
@@ -68,7 +66,7 @@ class VocaDetailViewController: UIViewController {
 
     }
     @IBAction func speakBtn(_ sender: UIButton) {
-        self.speak(speakText: self.cNameX + "," + self.eNameX , lang: "zh-TW")
+        self.speak(speakText: self.Voca.cName! + "," + self.Voca.eName! , lang: "zh-TW")
     }
 
     /*
