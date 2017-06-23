@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1D1C871EFAE5E1001D838D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D1C861EFAE5E1001D838D /* MainViewController.swift */; };
+		BE2F37B11EFBB89800FB606F /* RandVocaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F37B01EFBB89800FB606F /* RandVocaViewController.swift */; };
+		BE2F37B31EFC067600FB606F /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F37B21EFC067600FB606F /* LearnViewController.swift */; };
+		BE2F37B51EFC117700FB606F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F37B41EFC117600FB606F /* QuizViewController.swift */; };
+		BE2F37B71EFC258A00FB606F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2F37B61EFC258A00FB606F /* Launch Screen.storyboard */; };
 		BE5C1A091EE14485003BC946 /* VocaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE5C1A071EE14485003BC946 /* VocaModel.xcdatamodeld */; };
 		BE9148981EA9EB7A00A889D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */; };
 		BE91489D1EA9EB7A00A889D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE91489B1EA9EB7A00A889D6 /* Main.storyboard */; };
@@ -19,8 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1D1C861EFAE5E1001D838D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BE2F37B01EFBB89800FB606F /* RandVocaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandVocaViewController.swift; sourceTree = "<group>"; };
+		BE2F37B21EFC067600FB606F /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		BE2F37B41EFC117600FB606F /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		BE2F37B61EFC258A00FB606F /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BE5C1A081EE14485003BC946 /* VocaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VocaModel.xcdatamodel; sourceTree = "<group>"; };
-		BE9148941EA9EB7A00A889D6 /* MxoVocabulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MxoVocabulary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE9148941EA9EB7A00A889D6 /* ezRecite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezRecite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE91489C1EA9EB7A00A889D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,7 +64,7 @@
 		BE9148951EA9EB7A00A889D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE9148941EA9EB7A00A889D6 /* MxoVocabulary.app */,
+				BE9148941EA9EB7A00A889D6 /* ezRecite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,14 +74,19 @@
 			children = (
 				BEC5453C1ED8085A007E0EE7 /* VocaClass.swift */,
 				BE9148971EA9EB7A00A889D6 /* AppDelegate.swift */,
-				BE91489B1EA9EB7A00A889D6 /* Main.storyboard */,
 				BE91489E1EA9EB7A00A889D6 /* Assets.xcassets */,
+				BE91489B1EA9EB7A00A889D6 /* Main.storyboard */,
 				BE9148A01EA9EB7A00A889D6 /* LaunchScreen.storyboard */,
 				BE9148A31EA9EB7A00A889D6 /* Info.plist */,
 				BE9148A91EA9EBA200A889D6 /* VocaTableViewController.swift */,
 				BE9148AB1EA9ED8F00A889D6 /* VocaTableViewCell.swift */,
 				BEAEDFF41ECEC52200A64CC2 /* VocaDetailViewController.swift */,
 				BE5C1A071EE14485003BC946 /* VocaModel.xcdatamodeld */,
+				BE1D1C861EFAE5E1001D838D /* MainViewController.swift */,
+				BE2F37B01EFBB89800FB606F /* RandVocaViewController.swift */,
+				BE2F37B21EFC067600FB606F /* LearnViewController.swift */,
+				BE2F37B41EFC117600FB606F /* QuizViewController.swift */,
+				BE2F37B61EFC258A00FB606F /* Launch Screen.storyboard */,
 			);
 			path = MxoVocabulary;
 			sourceTree = "<group>";
@@ -93,7 +108,7 @@
 			);
 			name = MxoVocabulary;
 			productName = MxoVocabulary;
-			productReference = BE9148941EA9EB7A00A889D6 /* MxoVocabulary.app */;
+			productReference = BE9148941EA9EB7A00A889D6 /* ezRecite.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,6 +153,7 @@
 			files = (
 				BE9148A21EA9EB7A00A889D6 /* LaunchScreen.storyboard in Resources */,
 				BE91489F1EA9EB7A00A889D6 /* Assets.xcassets in Resources */,
+				BE2F37B71EFC258A00FB606F /* Launch Screen.storyboard in Resources */,
 				BE91489D1EA9EB7A00A889D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,9 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1D1C871EFAE5E1001D838D /* MainViewController.swift in Sources */,
+				BE2F37B51EFC117700FB606F /* QuizViewController.swift in Sources */,
 				BEAEDFF51ECEC52200A64CC2 /* VocaDetailViewController.swift in Sources */,
+				BE2F37B31EFC067600FB606F /* LearnViewController.swift in Sources */,
 				BE9148AA1EA9EBA200A889D6 /* VocaTableViewController.swift in Sources */,
 				BE5C1A091EE14485003BC946 /* VocaModel.xcdatamodeld in Sources */,
+				BE2F37B11EFBB89800FB606F /* RandVocaViewController.swift in Sources */,
 				BE9148981EA9EB7A00A889D6 /* AppDelegate.swift in Sources */,
 				BEC5453D1ED8085A007E0EE7 /* VocaClass.swift in Sources */,
 				BE9148AC1EA9ED8F00A889D6 /* VocaTableViewCell.swift in Sources */,
@@ -276,12 +296,13 @@
 		BE9148A71EA9EB7A00A889D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = AQ27Z3JHMZ;
 				INFOPLIST_FILE = MxoVocabulary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.mxo.MxoVocabulary;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ezRecite;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -289,12 +310,13 @@
 		BE9148A81EA9EB7A00A889D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = AQ27Z3JHMZ;
 				INFOPLIST_FILE = MxoVocabulary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.mxo.MxoVocabulary;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ezRecite;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

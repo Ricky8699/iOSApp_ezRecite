@@ -4,9 +4,10 @@
         <attribute name="cName" attributeType="String" syncable="YES"/>
         <attribute name="eName" attributeType="String" syncable="YES"/>
         <attribute name="img" attributeType="Binary" syncable="YES"/>
+        <attribute name="marked" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="phonetic" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Voca" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Voca" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

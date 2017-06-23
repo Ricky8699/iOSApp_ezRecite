@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BE9148931EA9EB7A00A889D6"
-               BuildableName = "MxoVocabulary.app"
+               BuildableName = "ezRecite.app"
                BlueprintName = "MxoVocabulary"
                ReferencedContainer = "container:MxoVocabulary.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE9148931EA9EB7A00A889D6"
-            BuildableName = "MxoVocabulary.app"
+            BuildableName = "ezRecite.app"
             BlueprintName = "MxoVocabulary"
             ReferencedContainer = "container:MxoVocabulary.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE9148931EA9EB7A00A889D6"
-            BuildableName = "MxoVocabulary.app"
+            BuildableName = "ezRecite.app"
             BlueprintName = "MxoVocabulary"
             ReferencedContainer = "container:MxoVocabulary.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE9148931EA9EB7A00A889D6"
-            BuildableName = "MxoVocabulary.app"
+            BuildableName = "ezRecite.app"
             BlueprintName = "MxoVocabulary"
             ReferencedContainer = "container:MxoVocabulary.xcodeproj">
          </BuildableReference>
